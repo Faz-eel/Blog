@@ -11,7 +11,7 @@ export default function BlogsPage() {
             </header>
             <main>
                 <Suspense fallback={<p className={styles.fallback}>Loading blogs...</p>}>
-                    <BlogList />
+                    <BlogList number='all'/>
                 </Suspense>
             </main>
         </div>
