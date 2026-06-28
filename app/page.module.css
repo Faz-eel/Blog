@@ -62,3 +62,21 @@
   margin-bottom: 1.5rem;
   letter-spacing: -0.01em;
 }
+
+@media (max-width: 600px) {
+  .page {
+    padding: 2rem 1.25rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    margin-bottom: 2.5rem;
+  }
+}

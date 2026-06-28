@@ -130,3 +130,21 @@
   padding: 0;
   color: var(--text);
 }
+
+@media (max-width: 600px) {
+  .article {
+    padding: 2rem 1.25rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .body {
+    font-size: 0.97rem;
+  }
+
+  .body h1 { font-size: 1.4rem; }
+  .body h2 { font-size: 1.2rem; }
+  .body h3 { font-size: 1rem; }
+}
