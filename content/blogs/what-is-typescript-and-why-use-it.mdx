@@ -1,0 +1,46 @@
+---
+title: "What is TypeScript and Why Use It?"
+date: "2026-05-20"
+readingTime: 6
+tag: "TypeScript"
+author: "Fazil Yiah"
+slug: "what-is-typescript-and-why-use-it"
+---
+
+# What is TypeScript and Why Use It?
+
+TypeScript is JavaScript with types. It compiles down to plain JavaScript and runs anywhere JavaScript runs — but during development it catches mistakes before they reach the browser.
+
+## The core idea
+
+JavaScript lets you do this:
+
+```js
+function greet(name) {
+  return 'Hello, ' + name.toUpperCase();
+}
+
+greet(42); // Runtime error: name.toUpperCase is not a function
+```
+
+TypeScript catches this at compile time:
+
+```ts
+function greet(name: string): string {
+  return 'Hello, ' + name.toUpperCase();
+}
+
+greet(42); // Error: Argument of type 'number' is not assignable to parameter of type 'string'
+```
+
+You get the error before you even run the code.
+
+## Why bother?
+
+- **Fewer runtime bugs** — the type checker finds whole categories of mistakes automatically
+- **Better autocomplete** — your editor knows the shape of your data and can suggest the right properties and methods
+- **Easier refactoring** — rename a property and TypeScript tells you every place that breaks
+
+## Is it worth the learning curve?
+
+For any project that'll grow beyond a few files, yes. The initial overhead of writing types pays off quickly in confidence and fewer production bugs.

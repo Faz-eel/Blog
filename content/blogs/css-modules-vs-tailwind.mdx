@@ -1,0 +1,46 @@
+---
+title: "CSS Modules vs Tailwind: Which Should You Use?"
+date: "2026-06-15"
+readingTime: 7
+tag: "CSS"
+author: "Fazil Yiah"
+slug: "css-modules-vs-tailwind"
+---
+
+# CSS Modules vs Tailwind: Which Should You Use?
+
+Two of the most popular styling approaches in modern React apps are CSS Modules and Tailwind CSS. Both solve the problem of scoped, maintainable styles — but in very different ways.
+
+## CSS Modules
+
+CSS Modules give each component its own scoped stylesheet. Class names are hashed at build time, so there are no naming collisions.
+
+```css
+/* button.module.css */
+.button {
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 0.375rem;
+}
+```
+
+You get the full power of CSS — nesting, media queries, animations — in a familiar syntax.
+
+## Tailwind CSS
+
+Tailwind takes the opposite approach: utility classes applied directly in the markup.
+
+```jsx
+<button className="px-4 py-2 bg-blue-600 text-white rounded-md">
+  Click me
+</button>
+```
+
+No switching between files. Design decisions happen right where the component is defined.
+
+## Which to choose?
+
+Pick **CSS Modules** if you prefer keeping styles separate from markup and want to write standard CSS. Pick **Tailwind** if you want to move fast without naming things and don't mind utility-heavy JSX.
+
+There's no wrong answer — both scale well. This blog uses CSS Modules.

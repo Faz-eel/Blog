@@ -1,0 +1,56 @@
+---
+title: "Git Tips Every Developer Should Know"
+date: "2026-05-28"
+readingTime: 5
+tag: "Git"
+author: "Fazil Yiah"
+slug: "git-tips-every-developer-should-know"
+---
+
+# Git Tips Every Developer Should Know
+
+Git is a tool everyone uses but few take the time to learn deeply. These tips will make your day-to-day workflow significantly smoother.
+
+## 1. Write meaningful commit messages
+
+A good commit message explains *why* the change was made, not what.
+
+```
+# Bad
+fix bug
+
+# Good
+fix: prevent duplicate form submission on slow connections
+```
+
+## 2. Use branches for everything
+
+Never commit directly to `main`. Even for a small fix, create a branch, make the change, and merge it. This keeps history clean and makes reverting easy.
+
+```bash
+git checkout -b fix/header-overlap
+```
+
+## 3. Stage selectively
+
+`git add .` adds everything. Instead, use `git add -p` to review each change chunk before staging it. You'll catch things you didn't mean to commit.
+
+## 4. Undo your last commit safely
+
+```bash
+git reset --soft HEAD~1
+```
+
+This undoes the commit but keeps your changes staged. Safe, reversible, and much better than force-pushing.
+
+## 5. Use git stash
+
+If you need to switch branches but aren't ready to commit, stash your work.
+
+```bash
+git stash
+git checkout other-branch
+git stash pop
+```
+
+Small habits like these compound into a much cleaner project history.

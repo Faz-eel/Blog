@@ -1,0 +1,56 @@
+---
+title: "Building a RESTful API with Node.js"
+date: "2026-06-05"
+readingTime: 9
+tag: "Node.js"
+author: "Fazil Yiah"
+slug: "building-a-restful-api-with-nodejs"
+---
+
+# Building a RESTful API with Node.js
+
+REST APIs are the backbone of most web applications. In this post we'll build a simple one using Node.js and Express.
+
+## Setting up
+
+Start by initialising a project and installing Express.
+
+```bash
+npm init -y
+npm install express
+```
+
+## Creating the server
+
+```js
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+```
+
+## Adding routes
+
+REST uses HTTP methods to describe actions: GET to read, POST to create, PUT to update, DELETE to remove.
+
+```js
+const posts = [];
+
+app.get('/posts', (req, res) => {
+  res.json(posts);
+});
+
+app.post('/posts', (req, res) => {
+  const post = req.body;
+  posts.push(post);
+  res.status(201).json(post);
+});
+```
+
+## What makes it RESTful?
+
+A REST API is stateless — each request carries all the information the server needs. Resources are identified by URLs, and actions are expressed through HTTP methods. Keep those two rules and you're building REST correctly.

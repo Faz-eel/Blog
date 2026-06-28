@@ -1,0 +1,54 @@
+---
+title: "How JavaScript Async/Await Actually Works"
+date: "2026-06-10"
+readingTime: 8
+tag: "JavaScript"
+author: "Fazil Yiah"
+slug: "how-javascript-async-await-works"
+---
+
+# How JavaScript Async/Await Actually Works
+
+`async/await` is syntactic sugar over Promises. Understanding what's happening underneath makes you a better debugger when things go wrong.
+
+## Promises first
+
+A Promise represents a value that will be available in the future. You attach callbacks with `.then()` and `.catch()`.
+
+```js
+fetch('/api/data')
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+```
+
+This works, but deeply nested chains get hard to read.
+
+## Enter async/await
+
+`async/await` lets you write asynchronous code that reads like synchronous code.
+
+```js
+async function loadData() {
+  try {
+    const res = await fetch('/api/data');
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+Every `await` pauses execution of the function until the Promise resolves — but it does not block the main thread. Other code keeps running.
+
+## A common mistake
+
+`await` only works inside an `async` function. Forgetting this is one of the most common errors beginners hit.
+
+```js
+// This will throw a syntax error
+const data = await fetch('/api/data');
+```
+
+Wrap it in an async function and you're good to go.

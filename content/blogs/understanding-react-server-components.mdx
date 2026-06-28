@@ -1,0 +1,32 @@
+---
+title: "Understanding React Server Components"
+date: "2026-06-20"
+readingTime: 6
+tag: "React"
+author: "Fazil Yiah"
+slug: "understanding-react-server-components"
+---
+
+# Understanding React Server Components
+
+React Server Components (RSC) are one of the biggest shifts in how we build React apps. They let you render components on the server without sending any JavaScript to the client.
+
+## What makes them different?
+
+A regular React component runs in the browser. A Server Component runs only on the server — it can read from a database, access the filesystem, or call APIs directly, and the client never sees that code.
+
+```jsx
+// This runs only on the server
+export default async function BlogList() {
+  const posts = await db.query('SELECT * FROM posts');
+  return <ul>{posts.map(p => <li>{p.title}</li>)}</ul>;
+}
+```
+
+## When to use them
+
+Use Server Components for anything that fetches data or doesn't need interactivity — layouts, lists, detail pages. Use Client Components (`'use client'`) for anything with state, event handlers, or browser APIs.
+
+## The big win
+
+Less JavaScript shipped to the browser means faster load times. Your data-fetching logic stays on the server where it belongs, and the client just receives the rendered HTML.
