@@ -2,7 +2,7 @@
   max-width: 720px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .header {
@@ -143,9 +143,10 @@
   word-break: normal;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .article {
     padding: 1.75rem 1rem;
+    width: 98%;
   }
 
   .title {
