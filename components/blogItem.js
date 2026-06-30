@@ -11,6 +11,7 @@ export default function BlogItem({ title, date, readingTime, tag, author, slug, 
             src={coverImage}
             alt={title}
             fill
+            sizes="(max-width: 600px) 72px, 220px"
             className={styles.image}
           />
         </div>
