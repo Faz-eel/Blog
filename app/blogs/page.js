@@ -2,6 +2,8 @@ import BlogList from "@/components/blogList";
 import { Suspense } from "react";
 import styles from "./blogs.module.css";
 
+export const metadata = { title: 'Blogs' };
+
 export default function BlogsPage() {
     return (
         <div className={styles.page}>

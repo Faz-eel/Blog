@@ -16,9 +16,9 @@
 }
 
 .profilePic {
-  border-radius: 50%;
+  
   object-fit: cover;
-  border: 2px solid var(--border);
+  
 }
 
 .nav {
@@ -37,6 +37,13 @@
 
 .navLink:hover {
   color: var(--accent);
+}
+
+.active {
+  color: var(--accent);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
 }
 
 @media (max-width: 600px) {
